@@ -48,6 +48,13 @@ else
     docker-compose --version
 fi
 
+# Check if db folder exists, if not create it
+if [ -d "db" ]; then
+    
+else
+    mkdir db
+fi
+
 # Start the project
 if [ -d "www" ]; then
     # echo "✔ ··· Changing permissions"
