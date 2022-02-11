@@ -50,7 +50,7 @@ fi
 
 # Check if db folder exists, if not create it
 if [ -d "db" ]; then
-    
+    echo ""
 else
     mkdir db
 fi

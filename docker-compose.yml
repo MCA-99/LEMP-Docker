@@ -3,7 +3,7 @@ services:
   mysql:
     image: mysql:8.0.28
     restart: always
-    container_name: ecshub-db
+    container_name: YOUR_PROJECT-db
     env_file: .env
     environment:
       MYSQL_ROOT_PASSWORD: ${DATABASE_ROOT_PASSWORD}
@@ -21,7 +21,7 @@ services:
   phpmyadmin:
     image: phpmyadmin:5.1.1-apache
     restart: always
-    container_name: ecshub-phpmyadmin
+    container_name: YOUR_PROJECT-phpmyadmin
     links:
       - mysql
     depends_on:
@@ -41,7 +41,7 @@ services:
     build: ./php/
     image: php:8-fpm
     restart: always
-    container_name: ecshub-php
+    container_name: YOUR_PROJECT-php
     links:
       - mysql
     depends_on:
@@ -59,7 +59,7 @@ services:
     build: ./nginx/
     image: nginx:1.21
     restart: always
-    container_name: ecshub-web
+    container_name: YOUR_PROJECT-web
     links:
       - php
     depends_on:
